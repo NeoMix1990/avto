@@ -1,0 +1,24 @@
+.somelink {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.somelink .btn i {
+	font-size: 30px;
+  padding: 5px;
+  width: 40px;
+}
+
+.somelink .btn .fa-pencil-square-o {
+	background-color: #2BD1F2;
+	color: #fff;
+}
+
+.somelink .btn .fa-trash-o {
+	background-color: #FFB913;
+	color: #fff;
+}
+
+.somelink .btn {
+	right: 0;
+}

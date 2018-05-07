@@ -1,0 +1,61 @@
+<h6 class="text-center">Водители</h6>
+<button mat-icon-button class="addicon" (click)="addNew()">
+	<mat-icon>add</mat-icon>
+</button>
+<!-- <table class="table table-sm table-hover">
+	<thead>
+		<tr>
+			<th>Позывной</th>
+			<th>ФИО</th>
+			<th>Статус</th>
+			<th>Баланс</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let driver of driverList; let i = index" [ngClass]="{'active': driver.choose}" (click)="previewclick(driver, i)">
+			<td>{{driver.nikname}}</td>
+			<td>{{driver.name}} {{driver.surname}}
+				<br>{{driver.lastname}}</td>
+			<td>{{driver.status}}</td>
+			<td>{{driver.money}}</td>
+		</tr>
+	</tbody>
+</table> -->
+
+
+
+<mat-table #table mat-table [dataSource]="dataSource">
+	<ng-container matColumnDef="choose">
+		<mat-header-cell *matHeaderCellDef style="display: none;"> choose </mat-header-cell>
+		<mat-cell *matCellDef="let driver" style="display: none;"> {{driver.choose}} </mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="$id">
+		<mat-header-cell *matHeaderCellDef style="display: none;"> $id </mat-header-cell>
+		<mat-cell *matCellDef="let driver" style="display: none;"> {{driver.$id}} </mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="nikname">
+		<mat-header-cell *matHeaderCellDef> Позывной </mat-header-cell>
+		<mat-cell *matCellDef="let driver"> {{driver.nikname}} </mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="name, surname, lastname">
+		<mat-header-cell *matHeaderCellDef> ФИО </mat-header-cell>
+		<mat-cell *matCellDef="let driver"> {{driver.name}} {{driver.surname}}
+			<br>{{driver.lastname}}</mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="status">
+		<mat-header-cell *matHeaderCellDef> Статус </mat-header-cell>
+		<mat-cell *matCellDef="let driver"> {{driver.status}} </mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="money">
+		<mat-header-cell *matHeaderCellDef> Баланс </mat-header-cell>
+		<mat-cell *matCellDef="let driver"> {{driver.money}} </mat-cell>
+	</ng-container>
+
+	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+	<mat-row *matRowDef="let driver, let i = index; columns: displayedColumns;" [ngClass]="{'active': driver.choose}" (click)="previewclick(driver, i)"></mat-row>
+</mat-table>

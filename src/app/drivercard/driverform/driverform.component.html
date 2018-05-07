@@ -1,0 +1,87 @@
+<!-- <form class="driverform" #driverForm="ngForm" (ngSubmit)="onSubmit(driverForm)">
+	<input type="hidden" name="$id" #$id="ngModel" [(ngModel)]="driverService.selectedDriver.$id">
+	<div class="form-group">
+		<label>SurName</label>
+		<input class="form-control" name="surname" #surname="ngModel" [(ngModel)]="driverService.selectedDriver.surname" placeholder="SurName" required>
+	</div>
+	<div class="form-group">
+		<label>Name</label>
+		<input class="form-control" name="name" #name="ngModel" [(ngModel)]="driverService.selectedDriver.name" placeholder="Name">
+	</div>
+	<div class="form-group">
+		<label>Lastname</label>
+		<input class="form-control" name="lastname" #lastname="ngModel" [(ngModel)]="driverService.selectedDriver.lastname" placeholder="Lastname">
+	</div>
+	<div class="form-group">
+		<label>Birthday</label>
+		<input class="form-control" type="text" name="birthday" #birthday="ngModel" [(ngModel)]="driverService.selectedDriver.birthday">
+	</div>
+	<div class="form-group">
+		<label>Gender</label>
+		<input class="form-control" name="gender" #gender="ngModel" [(ngModel)]="driverService.selectedDriver.gender">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-default" type="submit" [disabled]="!driverForm.valid">Submit</button>
+		<button class="btn btn-default" type="button" (click)="resetForm(driverForm)">Cancel</button>
+	</div>
+</form> -->
+
+<div class="container">
+	<h3 mat-dialog-title>Add new Driver</h3>
+
+	<form class="mat-dialog-content" (ngSubmit)="onSubmit(driverForm)" #driverForm="ngForm">
+
+		<div class="form" style="display: none;">
+			<mat-form-field>
+				<input matInput class="form-control" #choose="ngModel" [(ngModel)]="driverService.selectedDriver.choose" name="choose">
+				<input matInput class="form-control" #$id="ngModel" [(ngModel)]="driverService.selectedDriver.$id" name="$id">
+			</mat-form-field>
+		</div>
+
+		<div class="form">
+			<mat-form-field>
+				<input matInput #input class="form-control" placeholder="SurName" [(ngModel)]="driverService.selectedDriver.surname" name="surname"
+				 required>
+			</mat-form-field>
+		</div>
+		<div class="form">
+			<mat-form-field>
+				<input matInput class="form-control" placeholder="Name" [(ngModel)]="driverService.selectedDriver.name" name="name" required>
+			</mat-form-field>
+		</div>
+		<div class="form">
+			<mat-form-field>
+				<input matInput class="form-control" placeholder="LastName" [(ngModel)]="driverService.selectedDriver.lastname" name="lastname"
+				 required>
+			</mat-form-field>
+		</div>
+		<div class="form">
+			<mat-form-field>
+				<input matInput class="form-control" placeholder="Birthday" [(ngModel)]="driverService.selectedDriver.birthday" name="birthday"
+				 required>
+			</mat-form-field>
+		</div>
+		<div class="form">
+			<mat-form-field>
+				<input matInput class="form-control" placeholder="Status" [(ngModel)]="driverService.selectedDriver.status" name="status"
+				 required>
+			</mat-form-field>
+		</div>
+		<div class="form">
+			<mat-form-field>
+				<input matInput class="form-control" placeholder="Money" [(ngModel)]="driverService.selectedDriver.money" name="money" required>
+			</mat-form-field>
+		</div>
+		<div class="form">
+			<mat-form-field>
+				<input matInput class="form-control" placeholder="nikname" [(ngModel)]="driverService.selectedDriver.nikname" name="nikname"
+				 required>
+			</mat-form-field>
+		</div>
+
+		<div mat-dialog-actions>
+			<button mat-button [type]="submit" [disabled]="!driverForm.valid" [mat-dialog-close]="1">Save</button>
+			<button mat-button (click)="onNoClick()" [mat-dialog-close]="1">Cancel</button>
+		</div>
+	</form>
+</div>

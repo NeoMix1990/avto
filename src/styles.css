@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.nav-tabs .nav-item {
+	width: 50%!important;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+	border-top: #2BD1F2 2px solid;
+}
+
+.nav-tabs .nav-item .nav-link {
+	border-top: transparent 2px solid;
+	text-align: center;
+}
+
+.nav-tabs .nav-item a, .nav-tabs .nav-item a:hover{
+	color: #000;
+}

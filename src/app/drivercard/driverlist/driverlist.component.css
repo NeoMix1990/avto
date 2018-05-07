@@ -1,0 +1,28 @@
+mat-row.active:hover, mat-row.active {
+	background-color: #CEECF0;
+}
+mat-row:hover {
+	background-color: #EBF4F5;
+}
+
+.mat-header-cell {
+	text-align: center;
+}
+
+.addicon {
+	padding: 0;
+	border-width: 0px;
+	margin: 0;
+	height: 24px;
+	background-color: transparent;
+	float: right;
+	cursor: pointer;
+}
+
+.addicon:focus {
+	outline: 0px;
+}
+
+.addicon .mat-icon {
+	color: #2BD1F2;
+}

@@ -1,0 +1,32 @@
+.navbar .menu-static a{
+	color: #777;
+	background-color: lightgray;
+	padding: .375rem .75rem;
+	border-radius: .25rem;
+	text-decoration: none;
+}
+
+.navbar .menu-static a.active {
+	color: white;
+	background-color: #2BD1F2;
+	padding: .375rem .75rem;
+	border-radius: .25rem;
+	text-decoration: none;
+}
+
+.navbar select {
+	-webkit-appearance: none;
+	font-size: 0.8rem;
+}
+
+.navbar .new-select-style-wpandyou {
+	background: url(../assets/image/keyboard_arrow_down_grey_24x24.png) no-repeat right #fff;
+}
+
+.navbar .search {
+	padding-left: 1.6rem;
+	background: url(../assets/image/search_grey_24x24.png) no-repeat lightgray;
+	background-position-x: 3px;
+	background-position-y: center;
+	font-size: 0.8rem;
+}
