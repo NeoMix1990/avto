@@ -27,7 +27,7 @@ export class DriverlistComponent implements OnInit {
 
 	addNew(driver: Driver){
 		const dialogRef = this.dialog.open(DriverformComponent, {
-      data: {driver: driver }
+      data: {driver: driver}
 		});
 		dialogRef.afterClosed().subscribe(result => {
       if (result === 1) {

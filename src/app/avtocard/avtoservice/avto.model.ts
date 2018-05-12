@@ -1,3 +1,5 @@
+import { AUTO_STYLE } from "@angular/animations";
+
 export class Avto {
 	id: number;
 	mark: string;
@@ -9,6 +11,7 @@ export class Avto {
 	avtoconvoy: string;
 	carorganization: string;
 	available: string;
+	driver_id: string;
 	options: {
 		kidarmchair: string;
 		bagaje: string;
@@ -18,3 +21,9 @@ export class Avto {
 	};
 	drivers: string;
 }
+
+
+// let driverAuto = AUTO_STYLE.filter( auto => {
+// 	if (auto.driver_id === Driver.$id) return true
+// 	return false
+// })

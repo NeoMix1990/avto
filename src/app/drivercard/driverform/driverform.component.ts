@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { DriverService } from '../driverservice/driver.service';
 import { NgForm } from '@angular/forms';
 import { MatFormField } from '@angular/material/form-field';
 import { MatDialogRef } from '@angular/material';
 import { DrivercardComponent } from '../drivercard.component';
+import { DriverpreviewComponent } from '../driverpreview/driverpreview.component'
+import {MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
 	selector: 'app-driverform',
@@ -12,7 +14,7 @@ import { DrivercardComponent } from '../drivercard.component';
 })
 export class DriverformComponent implements OnInit {
 
-	constructor(private driverService: DriverService, public dialogRef: MatDialogRef<DrivercardComponent>) { }
+	constructor(private driverService: DriverService, public dialogRef: MatDialogRef<DrivercardComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 	ngOnInit() {
 		this.driverService.getDataDriver();

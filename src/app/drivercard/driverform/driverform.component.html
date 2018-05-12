@@ -27,54 +27,54 @@
 </form> -->
 
 <div class="container">
-	<h3 mat-dialog-title>Add new Driver</h3>
+	<h3 mat-dialog-title>Add new Driver {{data.driver.$id}}</h3>
 
 	<form class="mat-dialog-content" (ngSubmit)="onSubmit(driverForm)" #driverForm="ngForm">
 
 		<div class="form" style="display: none;">
 			<mat-form-field>
-				<input matInput class="form-control" #choose="ngModel" [(ngModel)]="driverService.selectedDriver.choose" name="choose">
-				<input matInput class="form-control" #$id="ngModel" [(ngModel)]="driverService.selectedDriver.$id" name="$id">
+				<input matInput class="form-control" #choose="ngModel" [(ngModel)]="data.driver.choose" name="choose">
+				<input matInput class="form-control" #$id="ngModel" [(ngModel)]="data.driver.$id" name="$id">
 			</mat-form-field>
 		</div>
 
 		<div class="form">
 			<mat-form-field>
-				<input matInput #input class="form-control" placeholder="SurName" [(ngModel)]="driverService.selectedDriver.surname" name="surname"
+				<input matInput #input class="form-control" placeholder="SurName" [(ngModel)]="data.driver.surname" name="surname"
 				 required>
 			</mat-form-field>
 		</div>
 		<div class="form">
 			<mat-form-field>
-				<input matInput class="form-control" placeholder="Name" [(ngModel)]="driverService.selectedDriver.name" name="name" required>
+				<input matInput class="form-control" placeholder="Name" [(ngModel)]="data.driver.name" name="name" required>
 			</mat-form-field>
 		</div>
 		<div class="form">
 			<mat-form-field>
-				<input matInput class="form-control" placeholder="LastName" [(ngModel)]="driverService.selectedDriver.lastname" name="lastname"
+				<input matInput class="form-control" placeholder="LastName" [(ngModel)]="data.driver.lastname" name="lastname"
 				 required>
 			</mat-form-field>
 		</div>
 		<div class="form">
 			<mat-form-field>
-				<input matInput class="form-control" placeholder="Birthday" [(ngModel)]="driverService.selectedDriver.birthday" name="birthday"
+				<input matInput class="form-control" placeholder="Birthday" [(ngModel)]="data.driver.birthday" name="birthday"
 				 required>
 			</mat-form-field>
 		</div>
 		<div class="form">
 			<mat-form-field>
-				<input matInput class="form-control" placeholder="Status" [(ngModel)]="driverService.selectedDriver.status" name="status"
+				<input matInput class="form-control" placeholder="Status" [(ngModel)]="data.driver.status" name="status"
 				 required>
 			</mat-form-field>
 		</div>
 		<div class="form">
 			<mat-form-field>
-				<input matInput class="form-control" placeholder="Money" [(ngModel)]="driverService.selectedDriver.money" name="money" required>
+				<input matInput class="form-control" placeholder="Money" [(ngModel)]="data.driver.money" name="money" required>
 			</mat-form-field>
 		</div>
 		<div class="form">
 			<mat-form-field>
-				<input matInput class="form-control" placeholder="nikname" [(ngModel)]="driverService.selectedDriver.nikname" name="nikname"
+				<input matInput class="form-control" placeholder="nikname" [(ngModel)]="data.driver.nikname" name="nikname"
 				 required>
 			</mat-form-field>
 		</div>
