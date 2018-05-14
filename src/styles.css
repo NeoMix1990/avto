@@ -4,6 +4,42 @@
 	width: 50%!important;
 }
 
+.cdk-overlay-pane {
+	height: 90%;
+}
+
+.mat-form-field-infix {
+	display: inline-flex!important;
+}
+.mat-form-field-underline {
+	height: 0!important;
+}
+.mat-input-infix .form-control {
+	border: none;
+}
+
+.mat-input-infix .mat-input-element, .mat-input-infix .form-control, .mat-input-infix .input-group-append {
+	padding: 10px!important;
+	height: 50px!important;
+	background-color: #ECEEEE!important;
+	color: #666!important;
+}
+
+.mat-input-infix .form-control-not, .mat-input-infix .money {
+	background-color: transparent!important;
+	color: #D1C124!important;
+	font-size: 30px;
+	padding: 6px 0px!important;
+}
+
+.mat-input-infix .money {
+	position: absolute;
+}
+
+.mat-input-element::placeholder {
+	color: #D0CDCC!important;
+}
+
 .nav-tabs .nav-item .nav-link.active {
 	border-top: #2BD1F2 2px solid;
 }

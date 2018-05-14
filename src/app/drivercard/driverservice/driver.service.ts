@@ -14,20 +14,22 @@ export class DriverService {
 
 	insertDriver(driver: Driver) {
 		this.driverList.push({
-			// photo: driver.photo,
+			show: driver.show = false,
+			choose: driver.choose = false,
+			foto: driver.foto,
 			surname: driver.surname,
 			name: driver.name,
 			lastname: driver.lastname,
 			birthday: driver.birthday,
-			// gender: driver.gender,
-			// passportserries: driver.passportserries,
-			// pasportnumber: driver.pasportnumber,
-			// datetake: driver.datetake,
-			// whotake: driver.whotake,
-			// addressreg: driver.addressreg,
-			// addresslive: driver.addresslive,
-			// phone: driver.phone,
-			// auto: driver.auto,
+			gender: driver.gender,
+			passportserries: driver.passportserries,
+			pasportnumber: driver.pasportnumber,
+			datetake: driver.datetake,
+			whotake: driver.whotake,
+			addressreg: driver.addressreg,
+			addresslive: driver.addresslive,
+			phone: driver.phone,
+			auto: driver.auto,
 			status: driver.status,
 			money: driver.money,
 			nikname: driver.nikname
@@ -35,31 +37,32 @@ export class DriverService {
 	}
 
 	updateDriver(driver: Driver) {
-		this.driverList.update(driver.$id,
-			{
-				// photo: driver.photo,
-				surname: driver.surname,
-				name: driver.name,
-				lastname: driver.lastname,
-				birthday: driver.birthday,
-				// gender: driver.gender,
-				// passportserries: driver.passportserries,
-				// pasportnumber: driver.pasportnumber,
-				// datetake: driver.datetake,
-				// whotake: driver.whotake,
-				// addressreg: driver.addressreg,
-				// addresslive: driver.addresslive,
-				// phone: driver.phone,
-				// auto: driver.auto,
-				status: driver.status,
-				money: driver.money,
-				nikname: driver.nikname
-			}
+		this.driverList.update(driver.$id, {
+			show: driver.show = false,
+			choose: driver.choose = false,
+			foto: driver.foto,
+			surname: driver.surname,
+			name: driver.name,
+			lastname: driver.lastname,
+			birthday: driver.birthday,
+			gender: driver.gender,
+			passportserries: driver.passportserries,
+			pasportnumber: driver.pasportnumber,
+			datetake: driver.datetake,
+			whotake: driver.whotake,
+			addressreg: driver.addressreg,
+			addresslive: driver.addresslive,
+			phone: driver.phone,
+			auto: driver.auto,
+			status: driver.status,
+			money: driver.money,
+			nikname: driver.nikname
+		}
 		);
 	}
 
 	deleteDriver($id?: string) {
-		if($id == '') {
+		if ($id == '') {
 			return false;
 		} else {
 			this.driverList.remove($id);

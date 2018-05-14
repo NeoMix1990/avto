@@ -1,87 +1,131 @@
-<!-- <form class="driverform" #driverForm="ngForm" (ngSubmit)="onSubmit(driverForm)">
-	<input type="hidden" name="$id" #$id="ngModel" [(ngModel)]="driverService.selectedDriver.$id">
-	<div class="form-group">
-		<label>SurName</label>
-		<input class="form-control" name="surname" #surname="ngModel" [(ngModel)]="driverService.selectedDriver.surname" placeholder="SurName" required>
-	</div>
-	<div class="form-group">
-		<label>Name</label>
-		<input class="form-control" name="name" #name="ngModel" [(ngModel)]="driverService.selectedDriver.name" placeholder="Name">
-	</div>
-	<div class="form-group">
-		<label>Lastname</label>
-		<input class="form-control" name="lastname" #lastname="ngModel" [(ngModel)]="driverService.selectedDriver.lastname" placeholder="Lastname">
-	</div>
-	<div class="form-group">
-		<label>Birthday</label>
-		<input class="form-control" type="text" name="birthday" #birthday="ngModel" [(ngModel)]="driverService.selectedDriver.birthday">
-	</div>
-	<div class="form-group">
-		<label>Gender</label>
-		<input class="form-control" name="gender" #gender="ngModel" [(ngModel)]="driverService.selectedDriver.gender">
-	</div>
-	<div class="form-group">
-		<button class="btn btn-default" type="submit" [disabled]="!driverForm.valid">Submit</button>
-		<button class="btn btn-default" type="button" (click)="resetForm(driverForm)">Cancel</button>
-	</div>
-</form> -->
-
 <div class="container">
-	<h3 mat-dialog-title>Add new Driver {{data.driver.$id}}</h3>
+	<h3 mat-dialog-title *ngIf="data.driver.$id == null">Add new Driver</h3>
+	<h3 mat-dialog-title *ngIf="data.driver.$id != null">edit driver {{data.driver.name}}</h3>
 
-	<form class="mat-dialog-content" (ngSubmit)="onSubmit(driverForm)" #driverForm="ngForm">
+
+	<form (ngSubmit)="onSubmit(driverForm)" #driverForm="ngForm">
 
 		<div class="form" style="display: none;">
 			<mat-form-field>
+				<input matInput class="form-control" #show="ngModel" [(ngModel)]="data.driver.show" name="show">
 				<input matInput class="form-control" #choose="ngModel" [(ngModel)]="data.driver.choose" name="choose">
 				<input matInput class="form-control" #$id="ngModel" [(ngModel)]="data.driver.$id" name="$id">
 			</mat-form-field>
 		</div>
+		<div class="firstblock d-flex">
+			<div class="row col-3 m0">
+				<div class="form">
+					<img src="{{data.driver.foto}}" alt="foto" width="100px" height="100px">
+					<input type="file" (change)="onFileChange($event)" />
+					<input hidden class="form-control" placeholder="Фамилия" [(ngModel)]="data.driver.foto" name="foto">
+				</div>
+			</div>
+			<div class="row col-9 m0">
+				<div class="form col-4">
+					<mat-form-field>
+						<input matInput class="form-control" placeholder="Фамилия" [(ngModel)]="data.driver.surname" name="surname" required>
+					</mat-form-field>
+				</div>
+				<div class="form col-4">
+					<mat-form-field>
+						<input matInput class="form-control" placeholder="Имя" [(ngModel)]="data.driver.name" name="name" required>
+					</mat-form-field>
+				</div>
+				<div class="form col-4">
+					<mat-form-field>
+						<input matInput class="form-control" placeholder="Отчество" [(ngModel)]="data.driver.lastname" name="lastname" required>
+					</mat-form-field>
+				</div>
+				<div class="form col-4">
+					<mat-form-field>
+						<input matInput class="form-control-not" placeholder="Money" [(ngModel)]="data.driver.money" name="money" required>
+						<span class="money">P</span>
+					</mat-form-field>
+				</div>
+				<div class="form col-4">
+					<mat-form-field>
+						<input matInput class="form-control" placeholder="Дата Рождения" value="  .  .    " name="birthday" [(ngModel)]="data.driver.birthday"
+						 maxlength="10" ngbDatepicker #d="ngbDatepicker">
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+								<img src="../../../assets/image/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+							</button>
+						</div>
+					</mat-form-field>
+				</div>
+				<div class="form col-4">
+					<mat-form-field>
+						<input matInput class="form-control" placeholder="gender" [(ngModel)]="data.driver.gender" name="gender" required>
+					</mat-form-field>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form">
+				<mat-form-field>
+					<input matInput class="form-control" placeholder="passportserries" [(ngModel)]="data.driver.passportserries" name="passportserries"
+					 required>
+				</mat-form-field>
+			</div>
+			<div class="form">
+				<mat-form-field>
+					<input matInput class="form-control" placeholder="pasportnumber" [(ngModel)]="data.driver.pasportnumber" name="pasportnumber"
+					 required>
+				</mat-form-field>
+			</div>
+			<div class="form">
+				<mat-form-field>
+					<input matInput class="form-control" placeholder="Дата Выдачи" value="  .  .    " name="datetake" [(ngModel)]="data.driver.datetake"
+					 maxlength="10" ngbDatepicker #dt="ngbDatepicker">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" (click)="dt.toggle()" type="button">
+							<img src="../../../assets/image/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+						</button>
+					</div>
+				</mat-form-field>
+			</div>
+			<div class="form">
+				<mat-form-field>
+					<input matInput class="form-control" placeholder="whotake" [(ngModel)]="data.driver.whotake" name="whotake" required>
+				</mat-form-field>
+			</div>
+			<div class="form">
+				<mat-form-field>
+					<input matInput class="form-control" placeholder="addressreg" [(ngModel)]="data.driver.addressreg" name="addressreg" required>
+				</mat-form-field>
+			</div>
+			<div class="form">
+				<mat-form-field>
+					<input matInput class="form-control" placeholder="addresslive" [(ngModel)]="data.driver.addresslive" name="addresslive" required>
+				</mat-form-field>
+			</div>
+			<div class="form">
+				<mat-form-field>
+					<input matInput class="form-control" placeholder="phone" [(ngModel)]="data.driver.phone" name="phone" required>
+				</mat-form-field>
+			</div>
+			<div class="form">
+				<mat-form-field>
+					<input matInput class="form-control" placeholder="auto" [(ngModel)]="data.driver.auto" name="auto" required>
+				</mat-form-field>
+			</div>
+		</div>
+
 
 		<div class="form">
 			<mat-form-field>
-				<input matInput #input class="form-control" placeholder="SurName" [(ngModel)]="data.driver.surname" name="surname"
-				 required>
+				<input matInput class="form-control" placeholder="Status" [(ngModel)]="data.driver.status" name="status" required>
 			</mat-form-field>
 		</div>
 		<div class="form">
 			<mat-form-field>
-				<input matInput class="form-control" placeholder="Name" [(ngModel)]="data.driver.name" name="name" required>
-			</mat-form-field>
-		</div>
-		<div class="form">
-			<mat-form-field>
-				<input matInput class="form-control" placeholder="LastName" [(ngModel)]="data.driver.lastname" name="lastname"
-				 required>
-			</mat-form-field>
-		</div>
-		<div class="form">
-			<mat-form-field>
-				<input matInput class="form-control" placeholder="Birthday" [(ngModel)]="data.driver.birthday" name="birthday"
-				 required>
-			</mat-form-field>
-		</div>
-		<div class="form">
-			<mat-form-field>
-				<input matInput class="form-control" placeholder="Status" [(ngModel)]="data.driver.status" name="status"
-				 required>
-			</mat-form-field>
-		</div>
-		<div class="form">
-			<mat-form-field>
-				<input matInput class="form-control" placeholder="Money" [(ngModel)]="data.driver.money" name="money" required>
-			</mat-form-field>
-		</div>
-		<div class="form">
-			<mat-form-field>
-				<input matInput class="form-control" placeholder="nikname" [(ngModel)]="data.driver.nikname" name="nikname"
-				 required>
+				<input matInput class="form-control" placeholder="nikname" [(ngModel)]="data.driver.nikname" name="nikname" required>
 			</mat-form-field>
 		</div>
 
 		<div mat-dialog-actions>
-			<button mat-button [type]="submit" [disabled]="!driverForm.valid" [mat-dialog-close]="1">Save</button>
-			<button mat-button (click)="onNoClick()" [mat-dialog-close]="1">Cancel</button>
+			<button mat-button [type]="submit" [disabled]="!driverForm.valid" [mat-dialog-close]="-1">Save</button>
+			<button mat-button (click)="onNoClick()">Cancel</button>
 		</div>
 	</form>
 </div>

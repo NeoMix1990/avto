@@ -13,7 +13,7 @@ import { environment } from '../environments/environment';
 import { DriverlistComponent } from './drivercard/driverlist/driverlist.component';
 import { DriverpreviewComponent } from './drivercard/driverpreview/driverpreview.component';
 import { DriverformComponent } from './drivercard/driverform/driverform.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AvtoService } from './avtocard/avtoservice/avto.service';
 import { DriverService } from './drivercard/driverservice/driver.service';
 import { MatTableModule, MatIconModule, MatDialogModule, MatInputModule } from '@angular/material';
@@ -33,7 +33,8 @@ import { DrivereditComponent } from './drivercard/driverpreview/driveredit/drive
 		DrivereditComponent,
 	],
 	entryComponents: [
-    DriverformComponent
+		DriverformComponent,
+		DriverlistComponent
   ],
 	imports: [
 		BrowserModule,
@@ -44,6 +45,7 @@ import { DrivereditComponent } from './drivercard/driverpreview/driveredit/drive
 		AngularFireDatabaseModule,
 		FormsModule,
 		CdkTableModule,
+		ReactiveFormsModule,
 		MatTableModule,
 		MatIconModule,
 		MatDialogModule,

@@ -2,29 +2,8 @@
 <button mat-icon-button class="addicon" (click)="addNew()">
 	<mat-icon>add</mat-icon>
 </button>
-<!-- <table class="table table-sm table-hover">
-	<thead>
-		<tr>
-			<th>Позывной</th>
-			<th>ФИО</th>
-			<th>Статус</th>
-			<th>Баланс</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let driver of driverList; let i = index" [ngClass]="{'active': driver.choose}" (click)="previewclick(driver, i)">
-			<td>{{driver.nikname}}</td>
-			<td>{{driver.name}} {{driver.surname}}
-				<br>{{driver.lastname}}</td>
-			<td>{{driver.status}}</td>
-			<td>{{driver.money}}</td>
-		</tr>
-	</tbody>
-</table> -->
 
-
-
-<mat-table #table mat-table [dataSource]="dataSource">
+<mat-table mat-table [dataSource]="dataSource">
 	<ng-container matColumnDef="choose">
 		<mat-header-cell *matHeaderCellDef style="display: none;"> choose </mat-header-cell>
 		<mat-cell *matCellDef="let driver" style="display: none;"> {{driver.choose}} </mat-cell>
@@ -59,3 +38,8 @@
 	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
 	<mat-row *matRowDef="let driver, let i = index; columns: displayedColumns;" [ngClass]="{'active': driver.choose}" (click)="previewclick(driver, i)"></mat-row>
 </mat-table>
+<div class="gg">
+driverService.selectedDrive {{this.driverService.selectedDriver.$id}}<br>
+driverService.selectedDriver.choose {{this.driverService.selectedDriver.choose}}<br>
+driverService.selectedDriver.show {{this.driverService.selectedDriver.show}}
+</div>

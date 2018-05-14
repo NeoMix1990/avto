@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 450px;
+}
+.m0 {
+	margin: 0;
+}
+
+
+.input-group-append {
+	margin-left: 0px;
+	position: absolute;
+	right: 1px;
+}
+
+.input-group-append img {
+	vertical-align: baseline;
+}

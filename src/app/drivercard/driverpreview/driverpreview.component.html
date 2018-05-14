@@ -1,47 +1,50 @@
-<form class="somelink justify-content-between">
-	<div class="leftbutton">
-		<a class="btn" (click)="oneditDriver(this.driverService.selectedDriver)">
-			<i class="fa fa-pencil-square-o"></i>
-		</a>
-	</div>
-	<div class="rightbutton">
-		<a class="btn" (click)="onDeleteDriver(this.driverService.selectedDriver.$id)">
-			<i class="fa fa-trash-o"></i>
-		</a>
-	</div>
-</form>
-<ngb-tabset>
-	<ngb-tab>
-		<ng-template ngbTabTitle>Водитель</ng-template>
-		<ng-template ngbTabContent>
-			<div class="mininfoname">
-				<p>
-					<span>{{driverService.selectedDriver.name}} {{driverService.selectedDriver.surname}}
-						<br>{{driverService.selectedDriver.lastname}}</span>
-				</p>
-				<p>{{driverService.selectedDriver.nikname}}</p>
-			</div>
-			<div class="mininfophone">
-				<p>{{driverService.selectedDriver.phone}}</p>213123213
-			</div>
-			<div class="mininfomodel">
-				<img src="assets/image/ic_directions_car_black_48dp.png" style="width: 40px;height: 40px;">
-			</div>
-		</ng-template>
-	</ngb-tab>
-	<ngb-tab>
-		<ng-template ngbTabTitle>История</ng-template>
-		<ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
-			<p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
-				beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR.
-				Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit
-				sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical
-				culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed
-				echo park.</p>
-		</ng-template>
-	</ngb-tab>
-</ngb-tabset>
+<div class="preview" *ngIf="this.driverService.selectedDriver.choose">
+	<form class="somelink justify-content-between">
+		<div class="leftbutton">
+			<a class="btn" (click)="oneditDriver(this.driverService.selectedDriver)">
+				<i class="fa fa-pencil-square-o"></i>
+			</a>
+		</div>
+		<div class="rightbutton">
+			<a class="btn" (click)="onDeleteDriver(this.driverService.selectedDriver.$id)">
+				<i class="fa fa-trash-o"></i>
+			</a>
+		</div>
+	</form>
+	
+	<ngb-tabset>
+		<ngb-tab>
+			<ng-template ngbTabTitle>Водитель</ng-template>
+			<ng-template ngbTabContent>
+				<div class="mininfoname">
+					<p>
+						<span>{{driverService.selectedDriver.name}} {{driverService.selectedDriver.surname}}
+							<br>{{driverService.selectedDriver.lastname}}</span>
+					</p>
+					<p>{{driverService.selectedDriver.nikname}}</p>
+				</div>
+				<div class="mininfophone">
+					<p>{{driverService.selectedDriver.phone}}</p>213123213
+				</div>
+				<div class="mininfomodel">
+					<img src="assets/image/ic_directions_car_black_48dp.png" style="width: 40px;height: 40px;">
+				</div>
+			</ng-template>
+		</ngb-tab>
+		<ngb-tab>
+			<ng-template ngbTabTitle>История</ng-template>
+			<ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+				<p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
+					beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR.
+					Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit
+					sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical
+					culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed
+					echo park.</p>
+			</ng-template>
+		</ngb-tab>
+	</ngb-tabset>
 
-<div class="driverpreview">
+	<div class="driverpreview">
 
+	</div>
 </div>
